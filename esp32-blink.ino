@@ -8,7 +8,9 @@ const int BLINK_SERVO_PIN = 12;
 const int ATTITUDE_SERVO_PIN = 13;
 
 const int BLINK_MIN_ANGLE = 0;
-const int BLINK_MAX_ANGLE = 180;
+const int BLINK_MAX_ANGLE = 160;
+
+const int BLINK_DELAY = 200;
 
 const int BLINK_MIN_VALUE = 1000;
 const int BLINK_MAX_VALUE = 12000;
@@ -44,7 +46,7 @@ void loop()
   if (currentTime - previousBlinkTime >= blinkInterval)
   {
     blinkServo.write(BLINK_MAX_ANGLE);
-    delay(200);
+    delay(BLINK_DELAY);
 
     blinkServo.write(BLINK_MIN_ANGLE);
 
